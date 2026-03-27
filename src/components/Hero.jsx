@@ -10,7 +10,12 @@ function Hero() {
       
       {/* Overlay */}
       <div className="hero-overlay"></div>
-      
+
+      <div className="hero-bg-images">
+        <img src="/images/nyse.jpg" alt="New York Stock Exchange" />
+        <img src="/images/wolf-of-wall-street.jpg" alt="The Wolf of Wall Street" />
+      </div>
+
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">Hi, I'm Praveenkumar B</h1>
