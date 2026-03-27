@@ -5,7 +5,7 @@ function Hero() {
     <section className="hero" id="home">
       {/* Video Background */}
       <video autoPlay muted loop className="hero-video" playsInline>
-        <source src="https://cdn.pixabay.com/video/2024/03/20/206107-915330833_large.mp4" type="video/mp4" />
+        <source src="/13047077_3840_2160_25fps.mp4" type="video/mp4" />
       </video>
       
       {/* Overlay */}
