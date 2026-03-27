@@ -31,9 +31,11 @@ function Contact() {
             <h3>Let's Connect</h3>
             <p>I'm always open to new opportunities and interesting projects. Feel free to reach out!</p>
             <div className="contact-details">
-              <p><strong>Email:</strong> praveenkumar@example.com</p>
-              <p><strong>Phone:</strong> +1 (XXX) XXX-XXXX</p>
+              <p><strong>Name:</strong> Praveenkumar B</p>
+              <p><strong>Email:</strong> praveenbk1910@gmail.com</p>
+              <p><strong>Phone:</strong> +91 9360365826</p>
               <p><strong>Location:</strong> India</p>
+              <p><strong>Role:</strong> Professional Stock and Data Trader Analyst</p>
             </div>
             <div className="social-links">
               <a href="#" className="social-icon">LinkedIn</a>
