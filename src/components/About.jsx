@@ -19,6 +19,11 @@ function About() {
             data science, programming, and advanced analytics techniques.
           </p>
           <p>
+            I also have a professional background in stock and data analysis, including experience as a stock trader, 
+            forex trader, and fund manager. I combine financial market knowledge with data-driven methodologies to
+            build robust trading strategies and deliver investment insights.
+          </p>
+          <p>
             When I'm not analyzing data, you can find me exploring new visualization techniques, learning 
             emerging analytics tools, working on AI/ML projects, or contributing to open-source data science 
             initiatives. I'm passionate about leveraging technology to solve real-world problems.

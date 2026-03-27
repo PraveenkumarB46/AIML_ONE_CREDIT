@@ -17,6 +17,10 @@ function Skills() {
     {
       category: 'Core Skills',
       skills: ['Statistical Analysis', 'Data Cleaning', 'Reporting', 'Business Intelligence']
+    },
+    {
+      category: 'Finance & Trading',
+      skills: ['Stock Trading', 'Forex Trading', 'Fund Management', 'Portfolio Optimization', 'Risk Management']
     }
   ]
 
