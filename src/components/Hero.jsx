@@ -13,10 +13,11 @@ function Hero() {
       
       <div className="hero-container">
         <div className="hero-content">
-          <h1 className="hero-title">Analyze Data with Confidence</h1>
-          <p className="hero-subtitle">Transform Raw Data into Strategic Insights</p>
+          <h1 className="hero-title">Hi, I'm Praveenkumar B</h1>
+          <p className="hero-subtitle">3rd Year AI/ML Student | Data Analysis & Visualization</p>
           <p className="hero-description">
-            Expert data analysis and visualization. Uncover patterns, drive decisions, and unlock business potential.
+            Transforming complex data into actionable insights. Exploring AI, ML, and advanced analytics 
+            to solve real-world problems and drive intelligent decision-making.
           </p>
           <div className="hero-buttons">
             <a href="#contact" className="btn btn-primary">Start Your Analysis</a>

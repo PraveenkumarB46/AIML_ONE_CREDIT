@@ -7,17 +7,21 @@ function About() {
         <h2>About Me</h2>
         <div className="about-content">
           <p>
-            I am a dedicated Data Analyst with a passion for uncovering meaningful patterns in complex datasets. 
-            With expertise in data visualization, statistical analysis, and business intelligence, I help organizations 
-            make informed decisions through data-driven insights.
+            I'm <strong>Praveenkumar B</strong>, a 3rd year AI/ML student with a passion for data analysis and 
+            uncovering meaningful patterns in complex datasets. With expertise in data visualization, statistical 
+            analysis, and business intelligence, I strive to help organizations make informed decisions through 
+            data-driven insights.
           </p>
           <p>
-            My journey in data analytics has equipped me with strong analytical skills, attention to detail, 
-            and the ability to communicate complex findings to both technical and non-technical stakeholders.
+            Currently pursuing my degree in Artificial Intelligence and Machine Learning, I've developed strong 
+            analytical skills, attention to detail, and the ability to communicate complex findings to both 
+            technical and non-technical stakeholders. My academic journey has equipped me with knowledge in 
+            data science, programming, and advanced analytics techniques.
           </p>
           <p>
-            When I'm not analyzing data, you can find me exploring new visualization techniques, 
-            learning emerging analytics tools, or contributing to open-source data projects.
+            When I'm not analyzing data, you can find me exploring new visualization techniques, learning 
+            emerging analytics tools, working on AI/ML projects, or contributing to open-source data science 
+            initiatives. I'm passionate about leveraging technology to solve real-world problems.
           </p>
         </div>
       </div>
