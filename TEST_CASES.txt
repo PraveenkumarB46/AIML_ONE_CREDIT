@@ -1,0 +1,882 @@
+================================================================================
+                    PORTFOLIO PROJECT - TEST CASES
+================================================================================
+Project: Praveenkumar B - Data Analyst Portfolio
+Version: 1.0.0
+Date: March 27, 2026
+
+================================================================================
+SECTION 1: UNIT TESTS
+================================================================================
+
+1.1 APP COMPONENT TESTS
+------------------------
+
+TEST CASE 1.1.1: App Component Renders Successfully
+Description: Verify that the App component renders without crashing
+Expected Behavior: App component should render all child components
+Preconditions: React and required dependencies are installed
+Steps:
+  1. Mount the App component
+  2. Verify that Header component is rendered
+  3. Verify that Hero component is rendered
+  4. Verify that About component is rendered
+  5. Verify that all 8 main sections are present
+Expected Result: All components render successfully
+Pass/Fail Criteria: All child components should be present in DOM
+
+TEST CASE 1.1.2: Menu Toggle State Management
+Description: Verify that menuOpen state toggles correctly
+Expected Behavior: toggleMenu function should update menuOpen state
+Steps:
+  1. Render App component
+  2. Get initial menuOpen state (should be false)
+  3. Call toggleMenu function
+  4. Verify menuOpen state is true
+  5. Call toggleMenu function again
+  6. Verify menuOpen state is false
+Expected Result: State toggles between true and false
+Pass/Fail Criteria: State changes correctly on each call
+
+TEST CASE 1.1.3: Menu Close on Outside Click
+Description: Verify that menu closes when clicking outside
+Expected Behavior: menuOpen state should be set to false on document click
+Steps:
+  1. Render App component
+  2. Set menuOpen state to true by calling toggleMenu
+  3. Simulate a click on document body
+  4. Verify menuOpen state is false
+Expected Result: Menu closes on outside click
+Pass/Fail Criteria: menuOpen state becomes false after document click
+
+TEST CASE 1.1.4: Event Listener Cleanup
+Description: Verify that event listeners are properly cleaned up
+Expected Behavior: Click event listener should be removed on unmount
+Steps:
+  1. Render App component
+  2. Get reference to addEventListener spy
+  3. Unmount the component
+  4. Verify removeEventListener was called
+Expected Result: Event listeners are properly cleaned up
+Pass/Fail Criteria: removeEventListener called on component unmount
+
+1.2 HEADER COMPONENT TESTS
+--------------------------
+
+TEST CASE 1.2.1: Header Renders Navigation
+Description: Verify that header displays navigation menu
+Expected Behavior: Navigation menu items should be visible
+Steps:
+  1. Render Header component
+  2. Verify navigation links are present
+  3. Check for logo/brand name
+  4. Verify menu toggle button exists
+Expected Result: Header displays navigation elements
+Pass/Fail Criteria: All navigation items visible and clickable
+
+TEST CASE 1.2.2: Menu Toggle Button Functionality
+Description: Verify menu toggle button calls parent function
+Expected Behavior: Clicking menu toggle should call toggleMenu prop
+Steps:
+  1. Render Header with mock toggleMenu function
+  2. Click menu toggle button
+  3. Verify toggleMenu was called
+Expected Result: toggleMenu callback is invoked
+Pass/Fail Criteria: Function called with correct parameters
+
+TEST CASE 1.2.3: Mobile Menu Display
+Description: Verify mobile menu displays correctly when open
+Expected Behavior: Mobile menu should be visible when menuOpen is true
+Steps:
+  1. Render Header with menuOpen={true}
+  2. Check if mobile menu class is applied
+  3. Render Header with menuOpen={false}
+  4. Check if mobile menu class is not applied
+Expected Result: Menu visibility matches menuOpen prop
+Pass/Fail Criteria: CSS class toggles with menuOpen prop
+
+1.3 HERO COMPONENT TESTS
+------------------------
+
+TEST CASE 1.3.1: Hero Content Renders
+Description: Verify that hero section displays main content
+Expected Behavior: Hero section should show title and call-to-action
+Steps:
+  1. Render Hero component
+  2. Verify heading text is present
+  3. Verify call-to-action button exists
+  4. Verify hero image/background is applied
+Expected Result: Hero section displays correctly
+Pass/Fail Criteria: All content is visible and properly styled
+
+TEST CASE 1.3.2: Hero Call-to-Action Button
+Description: Verify CTA button is functional
+Expected Behavior: CTA button should be clickable and navigate/scroll
+Steps:
+  1. Render Hero component
+  2. Locate CTA button
+  3. Click button
+  4. Verify navigation or scroll action occurs
+Expected Result: Button triggers intended action
+Pass/Fail Criteria: Button click results in expected navigation
+
+1.4 ABOUT COMPONENT TESTS
+--------------------------
+
+TEST CASE 1.4.1: About Content Displays
+Description: Verify about section displays bio information
+Expected Behavior: About section should show personal information
+Steps:
+  1. Render About component
+  2. Verify heading "About Me" is present
+  3. Verify bio text is displayed
+  4. Verify skills summary or profile image
+Expected Result: All about content is visible
+Pass/Fail Criteria: Content renders and is readable
+
+TEST CASE 1.4.2: About Section Scrolling
+Description: Verify about section scrolls into view
+Expected Behavior: Section should scroll smoothly into viewport
+Steps:
+  1. Scroll to About section
+  2. Verify section is in viewport
+  3. Check scroll position
+Expected Result: Section is visible and properly positioned
+Pass/Fail Criteria: Scroll animation works smoothly
+
+1.5 SKILLS COMPONENT TESTS
+--------------------------
+
+TEST CASE 1.5.1: Skills List Renders
+Description: Verify skills are displayed correctly
+Expected Behavior: All skills should be listed with categories
+Steps:
+  1. Render Skills component
+  2. Count skill categories
+  3. Verify each skill item has name and level/icon
+  4. Check visual hierarchy
+Expected Result: Skills displayed organized and visually clear
+Pass/Fail Criteria: All skills visible with proper categorization
+
+TEST CASE 1.5.2: Skills Animations
+Description: Verify skill items animate on scroll
+Expected Behavior: Skills should animate when scrolled into view
+Steps:
+  1. Render Skills component
+  2. Scroll skills into view
+  3. Observe animation
+Expected Result: Skill items animate smoothly
+Pass/Fail Criteria: Animation triggers on scroll
+
+1.6 PROJECTS COMPONENT TESTS
+----------------------------
+
+TEST CASE 1.6.1: Projects List Displays
+Description: Verify featured projects are shown
+Expected Behavior: Project cards should display with details
+Steps:
+  1. Render Projects component
+  2. Verify project cards exist
+  3. Check for project title, description, technology stack
+  4. Verify project links/buttons
+Expected Result: All projects displayed with complete information
+Pass/Fail Criteria: Project cards render with all details
+
+TEST CASE 1.6.2: Project Links Work
+Description: Verify project links are functional
+Expected Behavior: Project links should navigate to correct URLs
+Steps:
+  1. Render Projects component
+  2. Find project links
+  3. Verify href attributes point to correct URLs
+  4. Click links and verify navigation
+Expected Result: Links navigate correctly
+Pass/Fail Criteria: Links open correct URLs in new tabs/windows
+
+1.7 EXPERIENCE COMPONENT TESTS
+------------------------------
+
+TEST CASE 1.7.1: Experience Timeline Renders
+Description: Verify work experience is displayed in timeline
+Expected Behavior: Timeline should show jobs chronologically
+Steps:
+  1. Render Experience component
+  2. Verify timeline structure exists
+  3. Check job entries are ordered by date
+  4. Verify job details (title, company, date, description)
+Expected Result: Timeline displays correctly with all information
+Pass/Fail Criteria: All experience entries visible and properly ordered
+
+TEST CASE 1.7.2: Experience Details Visibility
+Description: Verify experience details are readable
+Expected Behavior: Job descriptions should be clear and well-formatted
+Steps:
+  1. Render Experience component
+  2. Read through job descriptions
+  3. Verify text is readable and has proper spacing
+Expected Result: Content is well-formatted and easy to read
+Pass/Fail Criteria: All text is readable with good contrast
+
+1.8 CONTACT COMPONENT TESTS
+----------------------------
+
+TEST CASE 1.8.1: Contact Form Renders
+Description: Verify contact form is displayed
+Expected Behavior: Form should have required fields (name, email, message)
+Steps:
+  1. Render Contact component
+  2. Verify form element exists
+  3. Check for name input field
+  4. Check for email input field
+  5. Check for message textarea
+  6. Verify submit button
+Expected Result: All form fields are present and accessible
+Pass/Fail Criteria: Complete form structure exists
+
+TEST CASE 1.8.2: Contact Form Validation
+Description: Verify form validates input correctly
+Expected Behavior: Form should validate required fields and email format
+Steps:
+  1. Attempt to submit empty form
+  2. Verify validation error messages
+  3. Enter invalid email format
+  4. Verify email validation error
+  5. Enter valid data
+  6. Verify form can be submitted
+Expected Result: Form validates all fields correctly
+Pass/Fail Criteria: Validation messages appear for invalid inputs
+
+TEST CASE 1.8.3: Contact Form Submission
+Description: Verify form submission works
+Expected Behavior: Form should submit data and show success message
+Steps:
+  1. Fill out contact form with valid data
+  2. Click submit button
+  3. Verify success message appears
+  4. Verify form resets after submission
+Expected Result: Form submits successfully
+Pass/Fail Criteria: Success message shown and form clears
+
+TEST CASE 1.8.4: Contact Information Display
+Description: Verify contact details are displayed
+Expected Behavior: Email, phone, social links should be visible
+Steps:
+  1. Render Contact component
+  2. Verify email address is displayed
+  3. Verify phone number is displayed (if applicable)
+  4. Verify social media links
+Expected Result: Contact information is accessible
+Pass/Fail Criteria: All contact details visible and functional
+
+1.9 FOOTER COMPONENT TESTS
+--------------------------
+
+TEST CASE 1.9.1: Footer Content Displays
+Description: Verify footer shows all required information
+Expected Behavior: Footer should display copyright, links, and social icons
+Steps:
+  1. Render Footer component
+  2. Verify copyright notice
+  3. Verify footer links
+  4. Verify social media icons
+  5. Verify year/date is current
+Expected Result: All footer content is displayed
+Pass/Fail Criteria: Complete footer with all elements
+
+TEST CASE 1.9.2: Footer Links Navigation
+Description: Verify footer links work correctly
+Expected Behavior: All footer links should navigate properly
+Steps:
+  1. Render Footer component
+  2. Click each footer link
+  3. Verify navigation or page scroll
+Expected Result: All links navigate correctly
+Pass/Fail Criteria: Links navigate to intended destinations
+
+================================================================================
+SECTION 2: COMPONENT TESTS (REACT TESTING LIBRARY)
+================================================================================
+
+2.1 APP COMPONENT INTEGRATION TESTS
+------------------------------------
+
+TEST CASE 2.1.1: Full App Render with All Sections
+Description: Test entire app renders with all child components
+Test Framework: React Testing Library + Jest
+Steps:
+  1. Render(<App />)
+  2. Assert Header is in document
+  3. Assert Hero is in document
+  4. Assert About is in document
+  5. Assert Skills is in document
+  6. Assert Projects is in document
+  7. Assert Experience is in document
+  8. Assert Contact is in document
+  9. Assert Footer is in document
+Expected Result: All sections render in app
+Test Code Pattern:
+  render(<App />)
+  expect(screen.getByText(/Hero Heading/i)).toBeInTheDocument()
+  expect(screen.getByText(/About/i)).toBeInTheDocument()
+
+TEST CASE 2.1.2: Menu State Persistence
+Description: Verify menu state persists across renders
+Test Framework: React Testing Library + Jest
+Steps:
+  1. Render(<App />)
+  2. Click menu toggle
+  3. Verify menuOpen is true
+  4. Re-render parent (or simulate)
+  5. Verify state persists
+Expected Result: Menu state maintains during re-renders
+
+2.2 FORM COMPONENT TESTS
+------------------------
+
+TEST CASE 2.2.1: Contact Form Input Changes
+Description: Test form inputs update correctly
+Test Framework: React Testing Library
+Steps:
+  1. Render(<Contact />)
+  2. Get name input
+  3. userEvent.type(nameInput, "John Doe")
+  4. Verify value is "John Doe"
+  5. Get email input
+  6. userEvent.type(emailInput, "john@example.com")
+  7. Verify value is "john@example.com"
+Expected Result: Form inputs update on user input
+
+TEST CASE 2.2.2: Form Submission
+Description: Test form submission behavior
+Test Framework: React Testing Library
+Steps:
+  1. Render(<Contact />)
+  2. Fill all form fields
+  3. Click submit button
+  4. Verify success message
+Expected Result: Form submits and shows success
+
+TEST CASE 2.2.3: Form Error Display
+Description: Test form shows validation errors
+Test Framework: React Testing Library
+Steps:
+  1. Render(<Contact />)
+  2. Click submit without filling fields
+  3. Verify error messages appear
+  4. Verify specific field errors
+Expected Result: Validation errors displayed correctly
+
+2.3 NAVIGATION COMPONENT TESTS
+------------------------------
+
+TEST CASE 2.3.1: Navigation Links
+Description: Test navigation links are present and clickable
+Test Framework: React Testing Library
+Steps:
+  1. Render(<Header />)
+  2. Get all navigation links
+  3. Verify each link has correct href
+  4. Click each link
+  5. Verify navigation occurs
+Expected Result: All navigation links work
+
+2.4 SNAPSHOT TESTS
+------------------
+
+TEST CASE 2.4.1: Header Component Snapshot
+Description: Verify Header component structure doesn't change unexpectedly
+Test Framework: Jest Snapshots
+Steps:
+  1. Render(<Header />)
+  2. Create snapshot of component
+  3. On future tests, compare with stored snapshot
+Expected Result: Component structure matches snapshot
+
+TEST CASE 2.4.2: Hero Component Snapshot
+Description: Verify Hero component structure consistency
+Test Framework: Jest Snapshots
+Steps:
+  1. Render(<Hero />)
+  2. Create snapshot
+  3. Compare with stored snapshot
+Expected Result: Structure remains consistent
+
+================================================================================
+SECTION 3: INTEGRATION TESTS
+================================================================================
+
+3.1 NAVIGATION FLOW TESTS
+-------------------------
+
+TEST CASE 3.1.1: Navigation Between Sections
+Description: Verify user can navigate between all sections
+Expected Behavior: Clicking navigation links scrolls to correct sections
+Steps:
+  1. Render full App
+  2. Click "About" navigation link
+  3. Verify About section is in viewport
+  4. Click "Skills" navigation link
+  5. Verify Skills section is in viewport
+  6. Click "Projects" navigation link
+  7. Verify Projects section is in viewport
+  8. Repeat for all sections
+Expected Result: Navigation scrolls to correct sections
+Pass/Fail Criteria: All navigation links work correctly
+
+3.2 FORM SUBMISSION FLOW
+------------------------
+
+TEST CASE 3.2.1: Complete Contact Form Submission Flow
+Description: Test entire contact form workflow
+Expected Behavior: User can fill, validate, and submit form successfully
+Steps:
+  1. Scroll to Contact section
+  2. Fill name field with valid name
+  3. Fill email field with valid email
+  4. Fill message field with message
+  5. Click submit
+  6. Verify success message appears
+  7. Verify form resets
+  8. Verify no error messages
+Expected Result: Form submission completes successfully
+Pass/Fail Criteria: Success message shown and form cleared
+
+3.3 PAGE LOAD TESTS
+-------------------
+
+TEST CASE 3.3.1: Full Page Load Performance
+Description: Verify page loads within acceptable time
+Expected Behavior: Page should load within 3 seconds
+Steps:
+  1. Measure page load start time
+  2. Wait for all components to render
+  3. Measure load complete time
+  4. Calculate load time
+Expected Result: Load time under 3 seconds
+Pass/Fail Criteria: Load time <= 3000ms
+
+TEST CASE 3.3.2: Images and Resources Load
+Description: Verify all images load correctly
+Expected Behavior: All images should load without errors
+Steps:
+  1. Load page
+  2. Check for broken image icons
+  3. Verify all image dimensions
+  4. Check console for 404 errors
+Expected Result: All images load successfully
+Pass/Fail Criteria: No broken images, no 404 errors
+
+3.4 RESPONSIVE DESIGN TESTS
+----------------------------
+
+TEST CASE 3.4.1: Mobile View (375px)
+Description: Verify portfolio displays correctly on mobile
+Expected Behavior: Layout should adapt for mobile screens
+Steps:
+  1. Set viewport to 375x667 (iPhone)
+  2. Verify elements stack vertically
+  3. Verify menu is accessible
+  4. Verify text is readable
+  5. Verify images scale appropriately
+Expected Result: Mobile layout is usable
+Pass/Fail Criteria: No horizontal scrolling, readable content
+
+TEST CASE 3.4.2: Tablet View (768px)
+Description: Verify portfolio displays correctly on tablet
+Expected Behavior: Layout should adapt for tablet screens
+Steps:
+  1. Set viewport to 768x1024 (iPad)
+  2. Verify layout is balanced
+  3. Verify all content is visible
+  4. Verify navigation works
+Expected Result: Tablet layout is usable
+Pass/Fail Criteria: Proper spacing, accessible navigation
+
+TEST CASE 3.4.3: Desktop View (1920px)
+Description: Verify portfolio displays correctly on desktop
+Expected Behavior: Layout should display fully on desktop
+Steps:
+  1. Set viewport to 1920x1080
+  2. Verify all content is visible
+  3. Verify layout is not cramped
+  4. Verify no excessive white space
+Expected Result: Desktop layout is optimized
+Pass/Fail Criteria: Balanced and professional appearance
+
+================================================================================
+SECTION 4: END-TO-END (E2E) TESTS
+================================================================================
+
+4.1 USER JOURNEY TESTS
+----------------------
+
+TEST CASE 4.1.1: Complete Portfolio Exploration Journey
+Description: Test typical user navigating entire portfolio
+Test Framework: Cypress/Playwright
+Expected Behavior: User can explore all sections smoothly
+Steps:
+  1. Navigate to portfolio homepage
+  2. Verify page loads completely
+  3. Read Hero section
+  4. Click "Learn More" or scroll to About
+  5. Read About section
+  6. Navigate to Skills
+  7. Verify all skills are displayed
+  8. Navigate to Projects
+  9. Click on first project link
+  10. Verify project opens in new tab
+  11. Return to portfolio
+  12. Navigate to Experience
+  13. View timeline and details
+  14. Scroll to Contact
+  15. Fill contact form with valid data
+  16. Submit form
+  17. Verify success message
+Expected Result: Complete user journey completes successfully
+Pass/Fail Criteria: All steps complete without errors
+
+TEST CASE 4.1.2: Mobile User Journey
+Description: Test user experience on mobile device
+Test Framework: Cypress (Mobile viewport)
+Expected Behavior: All features work on mobile
+Steps:
+  1. Set mobile viewport (375px)
+  2. Navigate to portfolio
+  3. Click hamburger menu
+  4. Click navigation link from menu
+  5. Verify menu closes and navigation works
+  6. Scroll through sections
+  7. Test form submission on mobile
+Expected Result: Complete mobile experience works
+Pass/Fail Criteria: All mobile interactions successful
+
+4.2 SINGLE FEATURE E2E TESTS
+----------------------------
+
+TEST CASE 4.2.1: Contact Form Complete E2E
+Description: Test contact form from start to finish
+Test Framework: Cypress
+Pre-conditions: Server is running, form endpoint is available
+Steps:
+  1. Visit portfolio URL
+  2. Scroll to contact form
+  3. Enter name: "Test User"
+  4. Enter email: "test@example.com"
+  5. Enter message: "This is a test message"
+  6. Click submit button
+  7. Wait for form processing
+  8. Verify success notification appears
+  9. Verify form fields are cleared
+  10. Verify no errors in console
+Expected Result: Form submission succeeds
+Pass/Fail Criteria: Success message shown, no errors
+
+TEST CASE 4.2.2: Navigation Links E2E
+Description: Test all navigation links work end-to-end
+Test Framework: Cypress
+Steps:
+  1. Visit portfolio URL
+  2. Click each navigation link
+  3. Verify correct scroll position
+  4. Verify section content is visible
+  5. Return to top
+  6. Repeat for all sections
+Expected Result: All navigation works
+Pass/Fail Criteria: All links navigate correctly
+
+4.3 CROSS-BROWSER TESTS
+-----------------------
+
+TEST CASE 4.3.1: Chrome Browser
+Description: Test portfolio on Chrome
+Browser: Google Chrome (latest)
+Steps:
+  1. Open portfolio in Chrome
+  2. Run complete user journey
+  3. Verify all features work
+  4. Check console for errors
+Expected Result: Works perfectly in Chrome
+Pass/Fail Criteria: No errors, full functionality
+
+TEST CASE 4.3.2: Firefox Browser
+Description: Test portfolio on Firefox
+Browser: Mozilla Firefox (latest)
+Steps:
+  1. Open portfolio in Firefox
+  2. Run complete user journey
+  3. Verify all features work
+  4. Check console for errors
+Expected Result: Works perfectly in Firefox
+Pass/Fail Criteria: No errors, full functionality
+
+TEST CASE 4.3.3: Safari Browser
+Description: Test portfolio on Safari
+Browser: Apple Safari (latest)
+Steps:
+  1. Open portfolio in Safari
+  2. Run complete user journey
+  3. Verify all features work
+  4. Check console for errors
+Expected Result: Works perfectly in Safari
+Pass/Fail Criteria: No errors, full functionality
+
+TEST CASE 4.3.4: Edge Browser
+Description: Test portfolio on Edge
+Browser: Microsoft Edge (latest)
+Steps:
+  1. Open portfolio in Edge
+  2. Run complete user journey
+  3. Verify all features work
+  4. Check console for errors
+Expected Result: Works perfectly in Edge
+Pass/Fail Criteria: No errors, full functionality
+
+================================================================================
+SECTION 5: ACCESSIBILITY TESTS
+================================================================================
+
+5.1 ACCESSIBILITY COMPLIANCE TESTS
+-----------------------------------
+
+TEST CASE 5.1.1: WCAG 2.1 Level AA Compliance
+Description: Verify portfolio meets WCAG 2.1 Level AA standards
+Testing Tool: axe-core / WAVE
+Steps:
+  1. Run accessibility scanner on all pages
+  2. Review contrast ratios (text vs background)
+  3. Verify all images have alt text
+  4. Check heading hierarchy (h1, h2, h3)
+  5. Verify form labels are properly associated
+  6. Test keyboard navigation
+  7. Verify focus indicators are visible
+Expected Result: No critical or serious violations
+Pass/Fail Criteria: WCAG AA compliant
+
+5.2 KEYBOARD NAVIGATION TESTS
+-----------------------------
+
+TEST CASE 5.2.1: Tab Navigation
+Description: Verify keyboard tab navigation works
+Steps:
+  1. Press Tab repeatedly
+  2. Verify focus moves through all interactive elements
+  3. Verify focus order makes sense
+  4. Verify all buttons are reachable via Tab
+Expected Result: Full keyboard navigation works
+Pass/Fail Criteria: All elements accessible via keyboard
+
+TEST CASE 5.2.2: Screen Reader Testing
+Description: Verify content is readable by screen readers
+Testing Tool: NVDA / JAWS
+Steps:
+  1. Open page with screen reader active
+  2. Navigate through page
+  3. Verify all content is announced
+  4. Verify form labels are announced
+  5. Verify button purposes are clear
+Expected Result: Screen reader can read all content
+Pass/Fail Criteria: Content fully accessible
+
+5.3 COLOR CONTRAST TESTS
+------------------------
+
+TEST CASE 5.3.1: Text Contrast Ratio
+Description: Verify text has sufficient contrast
+Testing Tool: WAVE / Lighthouse
+Steps:
+  1. Check all text contrast ratios
+  2. Verify normal text has 4.5:1 ratio
+  3. Verify large text has 3:1 ratio
+Expected Result: All contrast ratios meet AA standard
+Pass/Fail Criteria: 4.5:1 for normal, 3:1 for large text
+
+================================================================================
+SECTION 6: PERFORMANCE TESTS
+================================================================================
+
+6.1 LIGHTHOUSE TESTS
+--------------------
+
+TEST CASE 6.1.1: Performance Score
+Description: Verify Lighthouse performance score
+Testing Tool: Chrome DevTools Lighthouse
+Steps:
+  1. Run Lighthouse audit (desktop)
+  2. Check Performance score (target: 90+)
+  3. Check Accessibility score (target: 90+)
+  4. Check Best Practices score (target: 90+)
+  5. Check SEO score (target: 90+)
+Expected Result: All scores above 90
+Pass/Fail Criteria: Performance >= 90
+
+TEST CASE 6.1.2: Core Web Vitals
+Description: Verify Core Web Vitals meet standards
+Metrics: LCP, FID, CLS
+Steps:
+  1. Measure Largest Contentful Paint (LCP)
+  2. Measure First Input Delay (FID)
+  3. Measure Cumulative Layout Shift (CLS)
+Expected Result: LCP <= 2.5s, FID <= 100ms, CLS <= 0.1
+Pass/Fail Criteria: All CWV metrics pass
+
+6.2 BUNDLE SIZE TESTS
+---------------------
+
+TEST CASE 6.2.1: JavaScript Bundle Size
+Description: Verify bundle size is optimized
+Steps:
+  1. Build production bundle
+  2. Check main bundle size (target: < 100KB gzipped)
+  3. Check vendor bundle size
+  4. Verify no duplicate packages
+Expected Result: Bundle size optimized
+Pass/Fail Criteria: Main bundle < 100KB gzipped
+
+================================================================================
+SECTION 7: SECURITY TESTS
+================================================================================
+
+7.1 INPUT VALIDATION TESTS
+--------------------------
+
+TEST CASE 7.1.1: XSS Prevention
+Description: Verify application prevents XSS attacks
+Steps:
+  1. Try injecting script in contact form: <script>alert('xss')</script>
+  2. Verify script is not executed
+  3. Verify input is sanitized
+  4. Try various XSS payloads
+Expected Result: No scripts are executed
+Pass/Fail Criteria: XSS payloads are neutralized
+
+TEST CASE 7.1.2: SQL Injection Prevention
+Description: Verify application is protected from SQL injection
+Steps:
+  1. Try entering SQL in form: ' OR '1'='1
+  2. Verify request is handled safely
+  3. Try various SQL payloads
+Expected Result: Requests are safe from SQL injection
+Pass/Fail Criteria: No SQL injection vulnerabilities
+
+7.2 HTTPS/SECURITY HEADERS TESTS
+---------------------------------
+
+TEST CASE 7.2.1: HTTPS Connection
+Description: Verify site uses HTTPS
+Steps:
+  1. Visit portfolio URL
+  2. Verify padlock icon in browser
+  3. Verify certificate is valid
+Expected Result: HTTPS is enabled
+Pass/Fail Criteria: Valid SSL certificate
+
+TEST CASE 7.2.2: Security Headers
+Description: Verify security headers are present
+Headers to check: CSP, X-Frame-Options, X-Content-Type-Options
+Steps:
+  1. Open DevTools Network tab
+  2. Check response headers
+  3. Verify security headers present
+Expected Result: All security headers present
+Pass/Fail Criteria: Security headers configured
+
+================================================================================
+SECTION 8: BUILD AND DEPLOYMENT TESTS
+================================================================================
+
+8.1 BUILD TESTS
+---------------
+
+TEST CASE 8.1.1: Development Build
+Description: Verify development build works
+Steps:
+  1. Run: npm run dev
+  2. Verify dev server starts
+  3. Verify hot reload works
+  4. Verify no errors in console
+Expected Result: Dev build runs successfully
+Pass/Fail Criteria: Dev server starts without errors
+
+TEST CASE 8.1.2: Production Build
+Description: Verify production build completes
+Steps:
+  1. Run: npm run build
+  2. Verify build completes without errors
+  3. Check dist/build folder exists
+  4. Verify all assets are included
+Expected Result: Build completes successfully
+Pass/Fail Criteria: Dist folder created with all assets
+
+TEST CASE 8.1.3: Build Preview
+Description: Verify production build preview works
+Steps:
+  1. Build production
+  2. Run: npm run preview
+  3. Verify preview server starts
+  4. Verify site works in preview
+Expected Result: Preview displays correctly
+Pass/Fail Criteria: Preview loads without errors
+
+8.2 DEPLOYMENT TESTS
+---------------------
+
+TEST CASE 8.2.1: GitHub Pages Deployment
+Description: Verify site deploys to GitHub Pages
+Steps:
+  1. Configure repo for GitHub Pages
+  2. Push changes to main branch
+  3. Verify build completes
+  4. Access deployed URL
+  5. Verify all features work
+Expected Result: Site deploys and works on GitHub Pages
+Pass/Fail Criteria: Deployed site is accessible and functional
+
+TEST CASE 8.2.2: Production Site Functionality
+Description: Verify all features work on production
+Steps:
+  1. Access production URL
+  2. Test navigation on production
+  3. Test contact form on production
+  4. Verify all images load
+  5. Verify all scripts load
+Expected Result: All features work in production
+Pass/Fail Criteria: No errors on production
+
+================================================================================
+SECTION 9: REGRESSION TESTS
+================================================================================
+
+9.1 SMOKE TESTS
+---------------
+
+TEST CASE 9.1.1: Daily Smoke Test
+Description: Quick daily test to verify nothing is broken
+Test Suite: Subset of critical tests
+Steps:
+  1. Load homepage
+  2. Navigate to each main section
+  3. Test contact form
+  4. Verify no console errors
+  5. Check Lighthouse score
+Expected Result: No critical issues
+Pass/Fail Criteria: All smoke tests pass
+
+9.2 FULL REGRESSION TEST SUITE
+-------------------------------
+
+TEST CASE 9.2.1: Pre-Release Regression
+Description: Full test before releasing new version
+Test Suite: All test cases in this document
+Steps:
+  1. Run all unit tests
+  2. Run all component tests
+  3. Run all integration tests
+  4. Run all E2E tests
+  5. Run accessibility tests
+  6. Run performance tests
+Expected Result: All tests pass
+Pass/Fail Criteria: 100% of tests pass
+
+================================================================================
+END OF TEST CASES DOCUMENT
+================================================================================
